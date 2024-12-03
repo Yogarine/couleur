@@ -152,7 +152,7 @@ function cleanCoordinate(
     int|null                     $precision = null,
     bool                         $round     = false,
     \Stringable|string|null      $padLeft   = null,
-    int                          $length    = null,
+    int|null                     $length    = null,
 ) :float {
     if (isStringable($value)) {
         $value = addLeadingZero((string) $value);
@@ -265,10 +265,10 @@ function constant(
  * @return string                        The cleaned hexadecimal $value
  */
 function cleanHexValue(
-    \Stringable|string $value,
-    int                $length    = 2,
-    bool|null          $uppercase = null,
-    \Stringable|string $prefix    = null,
+    \Stringable|string      $value,
+    int                     $length    = 2,
+    bool|null               $uppercase = null,
+    \Stringable|string|null $prefix    = null,
 ) :string {
     $value  = (string) $value;
     $prefix = (string) ($prefix ?? $value);
@@ -427,8 +427,8 @@ function hexToDec(
  * @return boolean
  */
 function isColorString(
-    mixed                               $value,
-    ColorSpace|\Stringable|string|array $spaces = null,
+    mixed                                    $value,
+    ColorSpace|\Stringable|string|array|null $spaces = null,
 ) :bool {
     if (!isStringable($value)) {
         return false;
@@ -876,9 +876,9 @@ function toIterable(
 function toColor(
     mixed      $value,
     ColorSpace $to,
-    ColorSpace $from      = null,
-    array|null $fallback  = null,
-    bool|null  $throw     = null,
+    ColorSpace|null $from      = null,
+    array|null      $fallback  = null,
+    bool|null       $throw     = null,
 ) :array {
     $throw   ??= ($fallback === null);
     $from    ??= $to;

@@ -10,10 +10,9 @@
         }
     ],
     "require": {
-        "php" : "~8.1"
+        "php" : "^8.1"
     },
     "require-dev" : {
-        "php"             : "~8.1",
         "phpunit/phpunit" : "^9.5"
     },
     "autoload" : {

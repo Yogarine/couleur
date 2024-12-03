@@ -3,6 +3,7 @@
 /build
 /tests
 /vendor
+/composer.lock
 .DS_Store
 .env
 .php-cs-fixer.cache
